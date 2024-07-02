@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body id="body">
+    <main id="main">
+        <article class="check-list-info">
+            <div class="progress-info check-list-info__content">
+                <div class="stat progress-info__bar">
+                    <svg width="62" height="62" viewBox="0 0 62 62" class="stat__bar">
+                        <circle class="bg"></circle>
+                        <circle class="fg"></circle>
+                    </svg>
+                    <div class="stat__value">
+                        <span>0/7</span>
+                    </div>
+                </div>
+                <section class="tasks-info progress-info__main">
+                    <header class="tasks-info__header">
+                        <p class="tasks-info__title">Чеклист</p>
+                    </header>
+                    <div class="tasks-info__done-count">
+                        Выполнено:
+                        <span>0</span> из <span>7</span>
+                        действий
+                    </div>
+                    <div class="tasks-info__next-task">
+                        Следующее действие:
+                        <span>Созвониться с клиентом до
+                            <time>23.05.24 12:00</time>
+                        </span>
+                    </div>
+                </section>
+                <menu class="menu-tools progress-info__open-list-btn">
+                    <li class="menu-tools__item">
+                        <button class="menu-tools__open-list-btn">Открыть чеклист</button>
+                    </li>
+                </menu>
+            </div>
+        </article>
+    </main>
+</body>
+
+</html>

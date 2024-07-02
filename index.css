@@ -1,0 +1,137 @@
+:root {
+  --bg-color-1: hsl(219, 91%, 58%);
+  --bg-color-2: hsl(219, 73%, 50%);
+  --bg-color-3: hsl(218, 100%, 98%);
+  --text-color-1: hsl(0, 0%, 100%);
+  --text-color-2: hsl(223, 82%, 60%);
+  --text-color-3: hsla(0, 0%, 100%, 0.5);
+  --border-r-10: 10px;
+  --border-r-6: 6px;
+  --border-r-40: 40px;
+  --fs-12: 0.75rem;
+  --fs-15: 0.9375rem;
+  --fs-20: 1.25rem;
+  --fs-14: 0.875rem;
+  --ff-I: "Inter", sans-serif;
+  --progress: 1;
+  --size: 60px;
+  --half-size: calc(var(--size) / 2);
+  --stroke-width: 1px;
+  --radius: calc((var(--size) - var(--stroke-width)) / 2);
+  --circumference: calc(var(--radius) * pi * 2);
+  --dash: calc((var(--progress) * var(--circumference)) / 100);
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.check-list-info {
+  width: 743px;
+  height: 91px;
+  border-radius: var(--border-r-10);
+  background-color: var(--bg-color-1);
+}
+.check-list-info__content {
+  width: 100%;
+  height: 100%;
+  padding: 12px 18px 15px 22px;
+  display: flex;
+  gap: 1rem;
+}
+.check-list-info .progress-info__bar {
+  width: 62px;
+  height: 62px;
+}
+.check-list-info .progress-info .stat {
+  position: relative;
+}
+.check-list-info .progress-info .stat__bar circle {
+  cx: 30;
+  cy: 30;
+  fill: none;
+  stroke-linecap: round;
+}
+.check-list-info .progress-info .stat__bar .bg {
+  r: var(--radius);
+  stroke: var(--text-color-3);
+  stroke-width: var(--stroke-width);
+}
+.check-list-info .progress-info .stat__bar .fg {
+  r: var(--radius);
+  stroke: var(--text-color-1);
+  stroke-width: calc(var(--stroke-width) + 1px);
+  transform: rotate(-90deg);
+  transform-origin: var(--half-size) var(--half-size);
+  stroke-dasharray: var(--dash) calc(var(--circumference) - var(--dash));
+  transition: stroke-dasharray 0.3s linear 0s;
+}
+.check-list-info .progress-info .stat__value {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  line-height: 1.875rem;
+  white-space: nowrap;
+  color: var(--text-color-1);
+  font-family: var(--ff-I);
+  font-weight: 400;
+  font-size: var(--fs-20);
+}
+.check-list-info .progress-info__main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-basis: 100%;
+}
+.check-list-info .progress-info__main .tasks-info__header {
+  width: 76px;
+  border-radius: var(--border-r-40);
+  background-color: var(--bg-color-2);
+}
+.check-list-info .progress-info__main .tasks-info__title {
+  width: -moz-fit-content;
+  width: fit-content;
+  line-height: 1.125rem;
+  margin: auto;
+  color: var(--text-color-1);
+  font-size: var(--fs-12);
+  font-family: var(--ff-I);
+  font-weight: 400;
+}
+.check-list-info .progress-info__main .tasks-info__done-count {
+  font-size: var(--fs-15);
+  font-family: var(--ff-I);
+  font-weight: 600;
+  line-height: 1.25rem;
+  color: var(--text-color-1);
+}
+.check-list-info .progress-info__main .tasks-info__next-task {
+  font-size: var(--fs-12);
+  font-family: var(--ff-I);
+  font-weight: 400;
+  line-height: 1.125rem;
+  color: var(--text-color-1);
+}
+.check-list-info .progress-info .menu-tools {
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+.check-list-info .progress-info .menu-tools__open-list-btn {
+  width: 170px;
+  height: 40px;
+  line-height: 1.25rem;
+  border-radius: var(--border-r-6);
+  border: none;
+  color: var(--text-color-2);
+  cursor: pointer;
+  font-size: var(--fs-14);
+  font-weight: 400;
+  font-family: var(--ff-I);
+}
